@@ -1,0 +1,114 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	sans-serif;
+	background-image: linear-gradient(to right, #121212, #282828, #404040, #595959, #737373);
+	color: #fff;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+#root {
+	max-width: 700px;
+	margin: auto;
+}
+
+.pagination_container {
+	display: flex;
+	margin: 90px 0;
+	text-align: center;
+}
+
+.pagination_navigation {
+	flex-grow: 1;
+	background-color: #fff;
+	color: black;
+	margin: 0 10px;
+	font-size: 25px;
+	border-radius: 10px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.app_title_container {
+	margin-top: 20px;
+}
+
+.app_title {
+	float: left;
+	font-size: 33px;
+	color: #f32121;
+	font-weight: 900;
+}
+
+.search_input {
+	text-align: right;
+}
+
+.search_input input {
+	padding: 5px;
+}
+
+.search_button {
+	padding: 5px;
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	font-size: 18px;
+	min-width: 50px;
+	transition: all .2s;
+}
+
+.search_button:hover {
+	background-color: #f32121;
+}
+
+.movie_image_preview_container {
+	transition: all .3s;
+}
+
+.movie_image_preview_container:hover {
+	transform: scaleX(1.1) scaleY(1.1);
+}
+
+.movie_info_preview {
+	text-align: center;
+	position: absolute;
+	bottom: 15%;
+	left: 50%;
+	width: 100%;
+	transform: translate(-50%);
+}
+
+.movie_name_preview {
+	animation-name: moveInBottom;
+	animation-duration: .4s;
+	animation-timing-function: ease-out;
+}
+
+.movie_year_preview {
+	animation-name: moveInBottom;
+	animation-duration: .4s;
+	animation-timing-function: ease-out;
+}
+
+@keyframes moveInBottom{
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	80% {
+		transform: translateY(-15px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0);
+	}
+}
