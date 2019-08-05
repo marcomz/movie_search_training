@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
-import updateSearch from '../redux/actions/index.js';
+import updateSearch, { fetchSearch } from '../redux/actions/index.js';
 
 function mapDispatchToProps(dispatch) {
 	return {
 		updateSearch: searchString => dispatch(updateSearch(searchString)),
-		fetch_search: searchData => dispatch({ type: "FETCH_SEARCH", payload: searchData })
+		fetch_search: searchData => dispatch(fetchSearch(searchData))
 	};
 }
 

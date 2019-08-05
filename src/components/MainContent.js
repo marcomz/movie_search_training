@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import MoviesList from './MoviesList';
 import Pagination from './Pagination';
+import { fetchSearch, updateMoviesSearchPage, searchMovieInfo } from '../redux/actions/index.js';
 import getCookie, {setCookie, deleteCookie} from '../helper_functions/index.js';
 
 const mapStateToProps = state => {
@@ -18,10 +19,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		search_movie_info: movie_id => {dispatch({ type: 'SEARCH_MOVIE_INFO', payload: movie_id })},
-		fetch_top_rated: () => {dispatch({ type: 'FETCH_TOP_RATED', payload: '' })},
-		fetch_search: searchData => dispatch({ type: "FETCH_SEARCH", payload: searchData }),
-		update_search_page: page => dispatch({ type: "UPDATE_SEARCH_PAGE", payload: page })
+		search_movie_info: movie_id => dispatch(searchMovieInfo(movie_id)),
+		fetch_search: searchData => dispatch(fetchSearch(searchData)),
+		update_search_page: page => dispatch(updateMoviesSearchPage(page))
 	};
 };
 

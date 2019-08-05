@@ -42,7 +42,6 @@ class ConnectedMoviesList extends React.Component {
 			);
 		}
 		const info = this.props.stored_movies_info[this.state.show_synopsis_for_this_movie];
-		//console.log(info);
 		return(
 			<div key={key} style={{border: '4px solid #737373',padding: '20px', borderRadius: '11px', margin: '15px 0'}}>
 				<div>
